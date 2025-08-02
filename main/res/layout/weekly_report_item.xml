@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="vertical"
+android:padding="8dp">
+
+<!-- Datum des Eintrags -->
+<TextView
+android:id="@+id/textViewDate"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Datum"
+android:textSize="16sp"
+android:textStyle="bold"/>
+
+<!-- Adresse des Eintrags -->
+<TextView
+android:id="@+id/textViewAddress"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Adresse"
+android:textSize="16sp"/>
+
+<!-- Dauer des Aufenthalts -->
+<TextView
+android:id="@+id/textViewDuration"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Dauer"
+android:textSize="16sp"
+android:textColor="@android:color/holo_green_dark"/>
+
+</LinearLayout>

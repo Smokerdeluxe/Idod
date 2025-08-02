@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+android:padding="16dp">
+
+<!-- Adresseingabe -->
+<EditText
+android:id="@+id/editTextAddress"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:hint="Adresse manuell eingeben" />
+
+<!-- Statusanzeige -->
+    <TextView
+        android:id="@+id/textViewStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Status: Nicht eingeloggt"
+        android:layout_below="@id/buttonGetCurrentLocation"
+        android:layout_marginTop="16dp" />
+
+<!-- Button zur automatischen Adresseingabe -->
+<Button
+android:id="@+id/buttonGetCurrentLocation"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:text="Adresse automatisch ermitteln" />
+
+<!-- Check-In Button -->
+<Button
+android:id="@+id/buttonCheckIn"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:text="Check-In" />
+
+<!-- Check-Out Button -->
+<Button
+android:id="@+id/buttonCheckOut"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:text="Check-Out" />
+
+</LinearLayout>

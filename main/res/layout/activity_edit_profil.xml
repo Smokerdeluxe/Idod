@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".EditProfilActivity">
+
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="vertical"
+android:padding="16dp">
+
+<com.google.android.material.textview.MaterialTextView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Profil bearbeiten"
+android:textSize="20sp"
+android:layout_marginBottom="16dp" />
+
+<com.google.android.material.textview.MaterialTextView
+android:id="@+id/tvAccountSettingsHeader"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Kontoeinstellungen (Pflichtfelder bei Erstanmeldung)"
+android:textStyle="bold"
+android:layout_marginBottom="8dp" />
+
+<com.google.android.material.textfield.TextInputLayout
+android:id="@+id/tilEmail"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:hint="Neue E-Mail"
+android:layout_marginBottom="8dp"
+app:startIconDrawable="@drawable/ic_mail"> 
+
+<com.google.android.material.textfield.TextInputEditText
+android:id="@+id/etEmail"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:inputType="textEmailAddress" />
+</com.google.android.material.textfield.TextInputLayout>
+
+<com.google.android.material.textfield.TextInputLayout
+android:id="@+id/tilPassword"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:hint="Neues Passwort"
+android:layout_marginBottom="8dp"
+app:startIconDrawable="@drawable/ic_lock" 
+app:passwordToggleEnabled="true">
+
+<com.google.android.material.textfield.TextInputEditText
+android:id="@+id/etPassword"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:inputType="textPassword" />
+</com.google.android.material.textfield.TextInputLayout>
+
+<com.google.android.material.textfield.TextInputLayout
+android:id="@+id/tilConfirmPassword"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:hint="Passwort bestätigen"
+android:layout_marginBottom="8dp"
+app:startIconDrawable="@drawable/ic_lock"
+app:passwordToggleEnabled="true">
+
+<com.google.android.material.textfield.TextInputEditText
+android:id="@+id/etConfirmPassword"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:inputType="textPassword" />
+</com.google.android.material.textfield.TextInputLayout>
+
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="horizontal" >
+
+<com.google.android.material.button.MaterialButton
+android:id="@+id/btnPasswordSignIn"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_weight="1"
+android:text="Mit Passwort\nanmelden"
+android:layout_marginBottom="8dp"
+android:layout_marginRight="8dp"
+android:gravity="center" />
+
+<com.google.android.material.button.MaterialButton
+android:id="@+id/btnGoogleSignIn"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_weight="1"
+android:text="Mit Google/nanmelden"
+android:layout_marginBottom="8dp"
+android:layout_marginLeft="8dp"
+android:gravity="center" />
+</LinearLayout>
+
+<com.google.android.material.textview.MaterialTextView
+android:id="@+id/tvPersonalSettingsHeader"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Persönliche Daten"
+android:textStyle="bold"
+android:layout_marginTop="8dp"
+android:layout_marginBottom="8dp" />
+
+<com.google.android.material.textfield.TextInputLayout
+android:id="@+id/tilName"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:hint="Name"
+android:layout_marginBottom="8dp">
+<com.google.android.material.textfield.TextInputEditText
+android:id="@+id/etName"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:inputType="textPersonName" />
+</com.google.android.material.textfield.TextInputLayout>
+
+<com.google.android.material.textfield.TextInputLayout
+android:id="@+id/tilTelefonnummer"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:hint="Telefonnummer"
+android:layout_marginBottom="8dp">
+<com.google.android.material.textfield.TextInputEditText
+android:id="@+id/etTelefonnummer"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:inputType="phone" />
+</com.google.android.material.textfield.TextInputLayout>
+
+<com.google.android.material.textfield.TextInputLayout
+android:id="@+id/tilAdresse"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:hint="Adresse"
+android:layout_marginBottom="8dp">
+<com.google.android.material.textfield.TextInputEditText
+android:id="@+id/etAdresse"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:inputType="textPostalAddress" />
+</com.google.android.material.textfield.TextInputLayout>
+
+<com.google.android.material.textfield.TextInputLayout
+android:id="@+id/tilFunktion"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:hint="Funktion"
+android:layout_marginBottom="8dp">
+<com.google.android.material.textfield.TextInputEditText
+android:id="@+id/etFunktion"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:inputType="text" />
+</com.google.android.material.textfield.TextInputLayout>
+
+<com.google.android.material.textfield.TextInputLayout
+android:id="@+id/tilStatus"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:hint="Status"
+android:layout_marginBottom="8dp">
+<com.google.android.material.textfield.TextInputEditText
+android:id="@+id/etStatus"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:inputType="text" />
+</com.google.android.material.textfield.TextInputLayout>
+
+<com.google.android.material.textfield.TextInputLayout
+android:id="@+id/tilProfi"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:hint="Profi für/in"
+android:layout_marginBottom="8dp">
+<com.google.android.material.textfield.TextInputEditText
+android:id="@+id/etProfi"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:inputType="text" />
+</com.google.android.material.textfield.TextInputLayout>
+
+<com.google.android.material.textfield.TextInputLayout
+android:id="@+id/tilKFZ"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:hint="KFZ-Kennzeichen"
+android:layout_marginBottom="8dp">
+<com.google.android.material.textfield.TextInputEditText
+android:id="@+id/etKFZ"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:inputType="textCapCharacters" />
+</com.google.android.material.textfield.TextInputLayout>
+
+
+<com.google.android.material.button.MaterialButton
+android:id="@+id/btnSaveProfile"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:text="Profil speichern"
+android:layout_marginBottom="16dp" />
+
+</LinearLayout>
+</ScrollView>

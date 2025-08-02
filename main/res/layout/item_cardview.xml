@@ -1,0 +1,139 @@
+<!-- CardView für Items mit 3 Spalten -->
+<com.google.android.material.card.MaterialCardView
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_margin="8dp"
+android:elevation="4dp" >
+
+<androidx.constraintlayout.widget.ConstraintLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:padding="16dp" >
+
+<!-- Spalte 1, Zeile 1 -->
+<TextView
+android:id="@+id/tvName"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:textSize="18sp"
+android:textStyle="bold"
+app:layout_constraintEnd_toStartOf="@id/btnAnruf"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent"
+app:layout_constraintWidth_percent="0.5" />
+
+<!-- Spalte 1, Zeile 2 -->
+<TextView
+android:id="@+id/tvFunktion"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+app:layout_constraintEnd_toStartOf="@id/btnAnruf"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@id/tvName"
+app:layout_constraintWidth_percent="0.5" />
+
+<!-- Spalte 2 Button, über Zeilen 1+2 -->
+<com.google.android.material.button.MaterialButton
+android:id="@+id/btnAnruf"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:backgroundTint="@null"
+style="@style/Widget.Material3.Button.IconButton"
+app:layout_constraintBottom_toBottomOf="@id/tvFunktion"
+app:layout_constraintEnd_toStartOf="@id/btnWhatsApp"
+app:layout_constraintStart_toEndOf="@id/tvName"
+app:layout_constraintTop_toTopOf="parent"
+app:layout_constraintWidth_percent="0.25"
+app:icon="@android:drawable/ic_menu_call" />
+
+<!-- Spalte 3 Button, über Zeilen 1+2 -->
+<com.google.android.material.button.MaterialButton
+android:id="@+id/btnWhatsApp"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:backgroundTint="@null"
+style="@style/Widget.Material3.Button.IconButton"
+app:layout_constraintBottom_toBottomOf="@id/tvFunktion"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toEndOf="@id/btnAnruf"
+app:layout_constraintTop_toTopOf="parent"
+app:layout_constraintWidth_percent="0.25"
+app:icon="@android:drawable/sym_action_call" />
+
+<!-- Spalte 1, Zeile 3 DETAIL -->
+<TextView
+android:id="@+id/tvNummer"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:visibility="gone"
+app:layout_constraintEnd_toStartOf="@id/btnAnruf"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@id/tvFunktion"
+app:layout_constraintWidth_percent="0.5" />
+
+<!-- Spalte 1, Zeile 4 DETAIL -->
+<TextView
+android:id="@+id/tvEmail"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:visibility="gone"
+app:layout_constraintEnd_toStartOf="@id/btnAnruf"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@id/tvNummer"
+app:layout_constraintWidth_percent="0.5" />
+
+<!-- Spalte 1, Zeile 5 DETAIL -->
+<TextView
+android:id="@+id/tvStatus"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:visibility="gone"
+app:layout_constraintEnd_toStartOf="@id/btnAnruf"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@id/tvEmail"
+app:layout_constraintWidth_percent="0.5" />
+
+<!-- Spalte 1, Zeile 6 DETAIL -->
+<TextView
+android:id="@+id/tvProfi"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:visibility="gone"
+app:layout_constraintEnd_toStartOf="@id/btnAnruf"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@id/tvStatus"
+app:layout_constraintWidth_percent="0.5" />
+
+<!-- Spalte 1 Button, Zeile 7 DETAIL -->
+<com.google.android.material.button.MaterialButton
+android:id="@+id/btnEdit"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:visibility="gone"
+android:backgroundTint="@null"
+style="@style/Widget.Material3.Button.IconButton"
+app:layout_constraintEnd_toStartOf="@id/btnAnruf"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@id/tvProfi"
+app:layout_constraintWidth_percent="0.5"
+app:icon="@android:drawable/ic_menu_edit" />
+
+<!-- Spalte 2+3 Buton, Zeile 7 DETAIL -->
+<com.google.android.material.button.MaterialButton
+android:id="@+id/btnDelete"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:visibility="gone"
+android:backgroundTint="@null"
+style="@style/Widget.Material3.Button.IconButton"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toEndOf="@id/btnEdit"
+app:layout_constraintTop_toBottomOf="@id/tvProfi"
+app:layout_constraintWidth_percent="0.5"
+app:icon="@android:drawable/ic_menu_delete" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

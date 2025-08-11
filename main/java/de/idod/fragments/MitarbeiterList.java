@@ -47,6 +47,13 @@ public class MitarbeiterList extends Fragment implements MitarbeiterAdapter.OnAc
 	@Override
 	public void onEdit(Mitarbeiter item, String key) {
 		showEditDialog(item, key);
+		Dialog.editMitarbeiter(binding.getRoot(), item, confirmed -> {
+			if (confirmed) {
+				if (key != null) {
+				viewModel.save(key, item);
+				}
+			}
+		});
 	}
 
 	@Override

@@ -41,28 +41,25 @@ public class KontaktList extends Fragment implements KontaktAdapter.OnActionList
 			adapter.setItems(itemList);
 			setupChips(itemList);
 		});
-		binding.fabAdd.setOnClickListener(v -> showEditDialog(null, null));
+		binding.fabAdd.setOnClickListener(v -> onEdit(null, null));
 		return binding.getRoot();
 	}
 	
 	@Override
 	public void onEdit(Kontakt item, String key) {
-		//showEditDialog(item, key);
-		Kontakt newItem = Kontakte.editDialog(requireContext(), item, confirmed -> {
+		Dialog.editKontakt(binding.getRoot(), item, confirmed -> {
 			if (confirmed){
-				Toast.makeText(requireContext(), item.toString(), Toast.LENGTH_SHORT).show();
-			}
-			});
-			if(item != null){
-				//viewModel.save(key, newItem);
-				Toast.makeText(requireContext(), "Kontakt aktualisiert", Toast.LENGTH_SHORT).show();
+				if(key != null){
+					viewModel.save(key, item);
+					Toast.makeText(requireContext(), "Kontakt aktualisiert", Toast.LENGTH_SHORT).show();
 				}else{
-			//	viewModel.add(newItem);
-				Toast.makeText(requireContext(), "Kontakt hinugefügt", Toast.LENGTH_SHORT).show();
+					viewModel.add(item);
+					Toast.makeText(requireContext(), "Kontakt hinugefügt", Toast.LENGTH_SHORT).show();
+				}
 			}
-			
-		
+		});
 	}
+	
 	@Override
 	public void onDelete(Kontakt item, String key) {
 		Dialog.jaNein(requireContext(), "Kontakt löschen?", item.getName() + " wirklich aus den Kontakten löschen?", confirmed -> {
@@ -72,45 +69,6 @@ public class KontaktList extends Fragment implements KontaktAdapter.OnActionList
 		});
 	}
 	
-	private void showEditDialog(Kontakt item, String key) {
-		AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
-		DialogUserEditBinding dialogBinding = DialogUserEditBinding.inflate(getLayoutInflater());
-		builder.setView(dialogBinding.getRoot());
-		dialogBinding.etStatus.setVisibility(View.GONE);
-		dialogBinding.etProfi.setVisibility(View.GONE);
-		
-		if(item != null) {
-			dialogBinding.etName.setText(item.getName());
-			dialogBinding.etPhone.setText(item.getNummer());
-			dialogBinding.etEmail.setText(item.getEmail());
-			dialogBinding.etFunktion.setText(item.getFunktion());
-
-			builder.setTitle("Kontakt bearbeiten");
-			} else {
-			builder.setTitle("Kontakt erstellen");
-		}
-		builder.setPositiveButton("Speichern", (dialog, which) -> {
-			Kontakt newItem = new Kontakt(
-				dialogBinding.etName.getText().toString().trim(), 
-				dialogBinding.etPhone.getText().toString().trim(),
-				dialogBinding.etEmail.getText().toString().trim(), 
-				dialogBinding.etFunktion.getText().toString().trim()
-			);
-			
-			if(item != null){
-				viewModel.save(key, newItem);
-				Toast.makeText(requireContext(), "Kontakt aktualisiert", Toast.LENGTH_SHORT).show();
-				}else{
-				viewModel.add(newItem);
-				Toast.makeText(requireContext(), "Kontakt hinugefügt", Toast.LENGTH_SHORT).show();
-			}
-		});
-		
-		builder.setNegativeButton("Abbrechen", (dialog, which) -> dialog.dismiss());
-		AlertDialog dialog = builder.create();
-		dialog.show();
-	}
-
 	private void setupChips(HashMap<String, Kontakt> itemList) {
 		Set<String> uniqueFunctions = new HashSet<>();
 		itemList.forEach((key, item) -> uniqueFunctions.add(item.getFunktion().split(" ")[0]));

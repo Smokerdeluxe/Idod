@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 import de.gajd.idod.databinding.ItemCardviewBinding;
 import de.gajd.idod.methods.Utils;
 import de.gajd.idod.models.Mitarbeiter;
+import de.gajd.idod.utils.StartIntent;
 
 public class MitarbeiterAdapter extends BaseAdapter<Mitarbeiter, ItemCardviewBinding> {
 	
@@ -41,8 +42,8 @@ public class MitarbeiterAdapter extends BaseAdapter<Mitarbeiter, ItemCardviewBin
 				binding.tvStatus.setText(item.getStatus());
 				binding.tvProfi.setText(item.getProfi());		
 				binding.getRoot().setOnClickListener(v -> toggleDetails());			
-				binding.btnAnruf.setOnClickListener(v -> Utils.startCall(v.getContext(), item.getPhoneNumber()));
-				binding.btnWhatsApp.setOnClickListener(v -> Utils.startWhatsApp(v.getContext(), item.getPhoneNumber()));
+				binding.btnAnruf.setOnClickListener(v -> StartIntent.call(v.getContext(), item.getPhoneNumber()));
+				binding.btnWhatsApp.setOnClickListener(v -> StartIntent.whatsApp(v.getContext(), item.getPhoneNumber()));
 				binding.btnEdit.setOnClickListener(v -> listener.onEdit(item, key));
 				binding.btnDelete.setOnClickListener(v -> listener.onDelete(item, key));
 			}
